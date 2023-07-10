@@ -55,7 +55,6 @@ export const eliminarTarea = async (req, res) => {
 
 export const editarTarea = async (req, res) => {
     try {
-        console.log(req.body);
         await Tarea.findByIdAndUpdate(req.params.id, req.body);
         res.status(200).json({
             message: 'La tarea fué editada correctamente',

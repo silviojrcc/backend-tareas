@@ -7,4 +7,7 @@ const resultadoValidacion = (req, res, next) => {
             errors: errors.array()
         })
     }
+    next();
 }
+
+export default resultadoValidacion;
