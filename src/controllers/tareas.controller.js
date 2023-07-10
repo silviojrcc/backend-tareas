@@ -52,3 +52,18 @@ export const eliminarTarea = async (req, res) => {
         });
     }
 }
+
+export const editarTarea = async (req, res) => {
+    try {
+        console.log(req.body);
+        await Tarea.findByIdAndUpdate(req.params.id, req.body);
+        res.status(200).json({
+            message: 'La tarea fué editada correctamente',
+        })
+    } catch (err) {
+        console.log(err);
+        res.status(400).json({
+            message: 'Error al editar la tarea',
+        });
+    }
+}
